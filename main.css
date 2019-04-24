@@ -107,39 +107,40 @@ header{
 
 .movie-image{
     float: left;
-    width: 30%;
-    height: 100%;
+    height: 400px;
+
 }
 
 .movie-image img{
-    height: 100%;
-    width: 100%;
+    height: 400px;
+    width:270px;
+    overflow: hidden;
 }
 
 .movie-info{
     float: left;
-    margin-left: 5%;
-    width: 60%;
+    margin-left: 20px;
+    padding: 20px;
 }
 
 .info-title{
-    margin-bottom: 5px;
-    width: 100%;
+    position: relative;
+    top: 0;
 }
 
-.info-title h1{
-    width: 100%;
-    overflow: hidden;
-    max-lines: 1;
+.info-pub_date{
+    position: relative;
+    top: 10px;
 }
 
 .info-cast{
-    margin-top: 50px;
-    width: 100%;
+    position: relative;
+    top: 50px;
 }
 
 .movie-info h1{
-
+    width: auto;
+    max-lines: 1;
 }
 
 .movie-info h2{

@@ -4,9 +4,19 @@
 //
 'use strict';
 
+var data;
+
+function init(){
+    const url='films.json';
+    $.getJSON(url, function (_data) {
+        data = _data;
+    })
+}
+
 window.onload = function () {
     console.log("Onload")
-    const url='films.json';
+
+    init();
 
     $.getJSON(url, function (data) {
         console.log(data[0]);
