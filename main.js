@@ -6,24 +6,38 @@
 
 window.onload = function () {
     console.log("Onload")
+    const url='films.json';
 
-    var box = document.getElementById('movie-list');
+    $.getJSON(url, function (data) {
+        console.log(data[0]);
+        // console.log(data[0].casts);
 
-    var newCard = document.createElement('div');
-    newCard.className = 'single-movie';
-    newCard.id = 'movie-card-2';
+        const box = document.getElementById("cards");
 
-    var newImageDiv = document.createElement('div');
-    newImageDiv.className = 'movie-image';
-    newImageDiv.innerHTML = '<img src="https://img3.doubanio.com/lpic/s2555801.jpg">'
-    newCard.append(newImageDiv);
+        for(var i = 0, len = data.length; i<len; i++){
+            const newCard = document.createElement('div');
+            newCard.className = 'single-card';
+            newCard.id = 'movie-card-' + i;
 
-    var newInfo = document.createElement('div')
-    newInfo.className = 'movie-info';
-    newCard.append(newInfo);
+            const newImageDiv = document.createElement('div');
+            newImageDiv.className = 'movie-image';
+            newImageDiv.innerHTML = `<img src=${data[i].poster}>`;
+            newCard.append(newImageDiv);
 
-    box.append(newCard);
-}
+            const newInfo = document.createElement('div');
+            newInfo.className = 'movie-info';
+            newInfo.innerHTML = `<div class="info-title"><h1>${data[i].title}</h1></div>`;
+            // <div class="info-pub_date"><h2>${data[i].pubDate}</h2></div>
+            // <div class="info-cast"><h3>${data[i].cast}</h3>;
+
+            newCard.append(newInfo);
+
+            box.append(newCard);
+        }
+
+    })
+
+};
 
 
 //

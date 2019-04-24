@@ -3,16 +3,6 @@
     border: 0;
 }
 
-html, body, div{
-    marigin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font-family: "微软雅黑";
-    font: inherit;
-    vertical-align: baseline;
-}
-
 body{
     background-color: #1e252d;
 }
@@ -25,11 +15,16 @@ header{
     cursor: default;
 }
 
+/*hr{*/
+    /*width: 100%;*/
+    /*z-index: 5;*/
+    /*size: auto;*/
+/*}*/
+
 .container-all{
-    position: absolute;
-    width: 1050px;
-    height: auto;
-    margin: auto;
+    width: 100%;
+    border-left: 100px;
+    border-left-style: solid;
     top: 0;
     left: 0;
     right: 0;
@@ -37,43 +32,65 @@ header{
 }
 
 .header{
-    color: #ffffff;
-    height: 200px;
-    text-align: center;
+    padding: 30px 0 30px 2%;
+    height: auto;
     width: 100%;
+    background-color: #ffffff;
 }
 
 .header a{
-    color: #ffffff;
-    text-decoration: none;
-    border-bottom-color: rgba(255,255,255,0.5);
-}
-
-.header .home{
-    position: absolute;
-    top: 50px;
-    left: 0;
     border-style: solid;
-    border-color: #ffffff;
+    border-color: #4c4c4c;
     border-width: 5px;
     font-size: 2.25rem;
     font-weight: 900;
-    padding: 10px;
+    padding: 0 10px 0 10px;
+
+    color: #424242;
+    text-decoration: none;
+    border-bottom-color: rgba(91, 91, 91, 0.5);
+
 }
 
-.header .navigation{
-    position: absolute;
+.header .navigator{
 }
 
 .main-content{
     width: 100%;
-    height: 3000px;
+    height: auto;
     background-color: #ffffff;
 }
 
-.header-in-main{
-    margin: 0 25px 0 25px;
-    height: 50px;
+.movie-list{
+    border-width: 2px;
+    border-top-style: solid;
+    border-top-color: #bbbbbb;
+}
+
+.header-in-list{
+    margin: 1%;
+    height: 150px;
+    line-height: 150px;
+    overflow: hidden;
+}
+
+.header-in-list p{
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+#cards{
+    padding-bottom: 80px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-style: solid;
+    border-color: #dddddd;
+    background-color: #f3f3f3;
+}
+
+.movie-list .fill-in-the-blank{
+    width: 100%;
+    height: 40px;
 }
 
 .title{
@@ -82,33 +99,43 @@ header{
     text-align: center;
 }
 
-.single-movie{
-    margin: 50px 2% 0 2%;
+.single-card{
+    margin: 80px 2% 0 2%;
     width: 96%;
     height: 400px;
 }
 
 .movie-image{
     float: left;
-    height: 400px;
-
+    width: 30%;
+    height: 100%;
 }
 
 .movie-image img{
+    height: 100%;
+    width: 100%;
 }
 
 .movie-info{
     float: left;
-    margin-left: 20px;
-    padding: 20px;
+    margin-left: 5%;
+    width: 60%;
 }
 
 .info-title{
     margin-bottom: 5px;
+    width: 100%;
+}
+
+.info-title h1{
+    width: 100%;
+    overflow: hidden;
+    max-lines: 1;
 }
 
 .info-cast{
     margin-top: 50px;
+    width: 100%;
 }
 
 .movie-info h1{
@@ -124,4 +151,69 @@ header{
 
 }
 
+.footer-in-main{
+    padding: 30px;
+}
 
+.pagination{
+    height: 100px;
+    text-align: center;
+}
+
+.pagination ul, li {
+    list-style: none;
+    display: inline;
+    padding-left: 0px;
+}
+
+.pagination li {
+    counter-increment: pagination;
+}
+
+.pagination li:hover a {
+    color: #fdfdfd;
+    background-color: #1d1f20;
+    border: solid 1px #1d1f20;
+}
+
+.pagination li.active a {
+    color: #fdfdfd;
+    background-color: #1d1f20;
+    border: solid 1px #1d1f20;
+}
+
+.pagination li:first-child a:after {
+    content: "<";
+}
+
+.pagination li:nth-child(2) {
+    counter-reset: pagination;
+}
+
+.pagination li:last-child a:after {
+    content: ">";
+}
+.pagination li a {
+    border: solid 1px #d6d6d6;
+    border-radius: 0.2rem;
+    color: #7d7d7d;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 0.9rem;
+}
+.pagination li a:after {
+    content: " " counter(pagination) " ";
+}
+
+
+.copyright{
+    color: #ffffff;
+    color: rgba(255,255,255,0.25);
+    cursor: default;
+    text-align: center;
+    max-width: 72rem;
+    padding: 40px;
+    bottom: 0;
+}
