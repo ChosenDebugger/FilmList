@@ -8,7 +8,9 @@ window.onload = function () {
 
 
 function PageTurning(pageNum) {
-    $.getJSON('films.json', function (data) {
+    // https://raw.githubusercontent.com/ChosenDebugger/FilmList/master/films.json
+    $.getJSON('https://raw.githubusercontent.com/ChosenDebugger/FilmList/master/films.json', function (data) {
+        console.log(data);
         let currentPageNum = -1;
         const currentFirstCard = document.getElementById('movie-card-0').firstChild.firstChild;
         for (let i = 0; i < 200; i = i + 10) {
@@ -48,10 +50,10 @@ function ShowDetails(movieID) {
 
 
 function init_with_pageNum(pageNum) {
-    const url = 'films.json';
+    const url = 'https://raw.githubusercontent.com/ChosenDebugger/FilmList/master/films.json';
 
     $.getJSON(url, function (data) {
-        // console.log(data);
+        console.log(data);
         // console.log(data[0].casts);
 
         const cards = document.getElementById("cards");

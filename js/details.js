@@ -9,7 +9,7 @@ window.onload = function () {
 };
 
 function init_with_id(id) {
-    $.getJSON('films.json',function (data) {
+    $.getJSON('https://raw.githubusercontent.com/ChosenDebugger/FilmList/master/films.json',function (data) {
         let targetMovie;
         for (let i=0; i<data.length; i++){
             if (data[i]._id === id){
