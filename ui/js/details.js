@@ -9,14 +9,11 @@ window.onload = function () {
 };
 
 function init_with_id(id) {
-    $.getJSON('https://raw.githubusercontent.com/ChosenDebugger/FilmList/master/films.json',function (data) {
-        let targetMovie;
-        for (let i=0; i<data.length; i++){
-            if (data[i]._id === id){
-                targetMovie = data[i];
-            }
-        }
+    $.getJSON(`http://127.0.0.1:5000/api/v1.0/films?id=${id}`,function (data) {
+
+        const targetMovie = data.films[0];
         console.log(targetMovie);
+        
         if (targetMovie === undefined){
             console.log('Invalid ID');
             return;
