@@ -9,7 +9,7 @@ window.onload = function () {
 };
 
 function init_with_id(id) {
-    $.getJSON(`http://127.0.0.1:5000/api/v1.0/films?id=${id}`,function (data) {
+    $.getJSON(`http://106.14.136.88:5000/api/v1.0/films?id=${id}`,function (data) {
 
         const targetMovie = data.films[0];
         console.log(targetMovie);

@@ -7,7 +7,7 @@ let totalCount = 0;
 
 window.onload = function () {
     console.log("Onload");
-    const url = `http://127.0.0.1:5000/api/v1.0/films_count`;
+    const url = `http://106.14.136.88:5000/api/v1.0/films_count`;
 
     $.getJSON(url, function (data) {
         totalCount = data.totalCount;
@@ -18,7 +18,7 @@ window.onload = function () {
 };
 
 function init_with_pageNum(_pageNum) {
-    const url = `http://127.0.0.1:5000/api/v1.0/films?pageNum=${_pageNum}&limit=${limit}`;
+    const url = `http://106.14.136.88:5000/api/v1.0/films?pageNum=${_pageNum}&limit=${limit}`;
 
     $.getJSON(url, function (data) {
 
